@@ -1,0 +1,27 @@
+﻿<Window x:Class="HandwritingRecognitionDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HandwritingRecognitionDemo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid Margin="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="300"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Border Background="LightGray" Grid.Row="1" Margin="2,6">
+                <InkCanvas Name="HandwritingInkCanvas" PreviewMouseUp="HandwritingInkCanvas_OnPreviewMouseUp"/>
+            </Border>
+            <StackPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Bottom">
+                <Button x:Name="ClearButton" Content="清除" Click="ClearButton_OnClick"/>
+            </StackPanel>
+            <GroupBox Grid.Row="2">
+                <TextBlock Name="RecognizedTextBlock" TextWrapping="Wrap" Foreground="Red" FontSize="24"/>
+            </GroupBox>
+        </Grid>
+    </Grid>
+</Window>
